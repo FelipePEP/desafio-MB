@@ -14,8 +14,6 @@ const post = async (endpoint, data, config)=> {
 
 const execRequest = async ( url, method, config, body)=>{
   try {    
-    console.log(body);
-    console.log(JSON.stringify(body));
     const response = await fetch(url, {
       method,      
       headers: {
@@ -31,9 +29,6 @@ const execRequest = async ( url, method, config, body)=>{
     utils.processError(error);
   }
 }
-
-
-
 const apiFetch = {
   get, post
 }
