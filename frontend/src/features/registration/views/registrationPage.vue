@@ -87,11 +87,11 @@
 <script>
 /* eslint-disable */
 
-import apiFetch from '@/infraestructure/http/apiFetch';
-import mbButton from '@/components/mbButton.vue';
-import mbInput from '@/components/mbInput.vue';
-import utils from '@/utils/process'
-import DynamicForm from '@/components/DynamicForm.vue';
+import apiFetch from '@/core/http/apiFetch';
+import mbButton from '@/shared/components/mbButton.vue';
+import mbInput from '@/shared/components/mbInput.vue';
+import utils from '@/core/utils/process'
+import DynamicForm from '@/features/registration/components/DynamicForm.vue';
 
 export default {
   name: 'registrationPage',

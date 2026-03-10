@@ -44,15 +44,30 @@ npm run start
 Parte do desafio constava em desenvolver um front em Vue JS, sem bibliotecas de estilo e componentes.
 
 <a id="item05"></a>
-- ## Arquitetura 
+- ## Arquitetura
 
-As pastas foram criadas para manter sob controle um eventual aumento na escala, evitando arquivos na raiz do projeto.
-- Components: Agrupar todos componentes vue
-- Infraestructure:  Centraliza todos os meios de comunicação para fora do ecossistema visando organização e reuso (ex: requisições http). 
-- Router: Reune todas as rotas da aplicação.
-- Styles: Idealizado para comportar os arquivos de folha de estilo globais e as variáveis de pre-processadores.
-- Utils: Arquivos que contém lógicas de programação dedicadas a problemas pontuais e recorrentes, como tratamento de datas, strings, json, alarmes etc.
-- Views: Todas as paginas da aplicação, que utilizam os componentes e concentram-se na usabilidade dos clientes.
+A estrutura de pastas adota o padrão amplamente utilizado no mercado Angular (core / shared / features), adaptado ao ecossistema Vue. Essa arquitetura favorece escalabilidade, separação de responsabilidades e reuso de código.
+
+```
+src/
+├── core/               # Serviços singleton e infraestrutura da aplicação
+│   ├── http/           # Abstração das requisições HTTP (apiFetch)
+│   └── utils/          # Utilitários globais (tratamento de URL, resposta, erros e feedback)
+├── shared/             # Código reutilizável entre diferentes features
+│   └── components/     # Componentes genéricos (mbButton, mbInput)
+├── features/           # Módulos de negócio organizados por domínio
+│   └── registration/   # Feature de cadastro
+│       ├── components/ # Componentes específicos da feature (DynamicForm, DynamicInput)
+│       └── views/      # Páginas da feature (registrationPage)
+├── router/             # Configuração central de rotas
+├── styles/             # Estilos globais e variáveis de pré-processador
+└── assets/             # Recursos estáticos (imagens, ícones)
+```
+
+**Princípios da arquitetura:**
+- **core**: tudo que é instanciado uma única vez na aplicação — comunicação HTTP, utilitários globais. Não depende de nenhuma feature.
+- **shared**: componentes e utilitários reutilizáveis entre múltiplas features. Não conhece nenhuma feature específica.
+- **features**: cada subpasta agrupa tudo que pertence a um domínio de negócio (componentes, views, serviços locais), facilitando evolução e eventual lazy-loading.
 
 
 <a id="item06"></a>
