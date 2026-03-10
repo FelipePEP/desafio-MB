@@ -1,4 +1,4 @@
-import utils from '@/utils/process'
+import utils from '@/core/utils/process'
 
 const get = async (endpoint, params, config)=> {
     const queryString = new URLSearchParams(params).toString();

@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import registrationPage from '@/views/registrationPage.vue'
+import registrationPage from '@/features/registration/views/registrationPage.vue'
 
 Vue.use(VueRouter)
 

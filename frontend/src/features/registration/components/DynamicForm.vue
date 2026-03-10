@@ -18,9 +18,9 @@
 </template>
 
 <script>
-import DynamicInput from '@/components/DynamicInput.vue';
-import mbButton from '@/components/mbButton.vue';
-import utils from '@/utils/process'
+import DynamicInput from '@/features/registration/components/DynamicInput.vue';
+import mbButton from '@/shared/components/mbButton.vue';
+import utils from '@/core/utils/process'
 
 export default {
   props: {
